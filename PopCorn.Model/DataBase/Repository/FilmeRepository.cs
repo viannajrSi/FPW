@@ -36,6 +36,7 @@ namespace PopCorn.Model.DataBase.Repository
             }
             finally
             {
+                //teste
                 this.MySqlConnection.Close();
             }
         }
