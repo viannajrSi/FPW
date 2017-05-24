@@ -12,6 +12,5 @@ namespace PopCorn.Model.DataBase.Model
         public string Nome { get; set;}
         public string Descricao { get; set;}
         public string Genero { get; set;}
-        private enum Categoria {lançamento, normal, erotico, infantil}
     }
 }
