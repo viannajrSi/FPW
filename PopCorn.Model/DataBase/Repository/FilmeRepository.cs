@@ -27,6 +27,7 @@ namespace PopCorn.Model.DataBase.Repository
                 cmd.Parameters.AddWithValue("@nome", filme.Nome);
                 cmd.Parameters.AddWithValue("@descricao", filme.Descricao);
                 cmd.Parameters.AddWithValue("@genero", filme.Genero);
+                //falta categoria
                 cmd.Parameters.AddWithValue("@duracao", filme.Duracao);
                 cmd.ExecuteNonQuery();
             }
