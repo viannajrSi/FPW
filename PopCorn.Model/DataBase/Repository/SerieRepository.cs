@@ -40,4 +40,5 @@ namespace PopCorn.Model.DataBase.Repository
                 this.MySqlConnection.Close();
             }
         }
+    }
 }
