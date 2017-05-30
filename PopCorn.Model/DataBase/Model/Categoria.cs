@@ -9,10 +9,10 @@ namespace PopCorn.Model.DataBase.Model
     public class Categoria
     {
         public enum categoria {
-            lancamento,
-            normal,
-            erotico,
-            infantil
+            lancamento = 1,
+            normal = 2,
+            erotico = 3,
+            infantil = 4
         }
     }
 }

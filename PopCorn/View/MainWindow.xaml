@@ -5,8 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PopCorn"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+        Title="MainWindow" Height="350" Width="972.059" Loaded="Window_Loaded">
+    <Grid Margin="0,0,-8,-4" RenderTransformOrigin="0.606,-0.378">
+        <Button x:Name="button" Content="Novo Filme" HorizontalAlignment="Left" Margin="10,289,0,0" VerticalAlignment="Top" Width="75" Command="{Binding NovoFilmeCommand}"/>
+        <Button x:Name="button1" Content="Nova Série" HorizontalAlignment="Left" Margin="590,289,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="button2" Content="Sair" HorizontalAlignment="Left" Margin="878,289,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.261,0.72" Command="{Binding CloseCommand}"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="64,4,0,0" TextWrapping="Wrap" Text="{Binding CampoBuscaFilme, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="label" Content="Código" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="button3" Content="Buscar" HorizontalAlignment="Left" Margin="189,6,0,0" VerticalAlignment="Top" Width="75" Command="{Binding BuscarFilmeCommand}" />
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="10,66,0,0" VerticalAlignment="Top" Height="218" Width="391" ItemsSource="{Binding Filmes}" AutoGenerateColumns="False" SelectedItem="{Binding FilmeSelecionado, Mode=TwoWay}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Id}" ClipboardContentBinding="{x:Null}" Header="Codigo"/>
+                <DataGridTextColumn Binding="{Binding Nome, Mode=TwoWay}" ClipboardContentBinding="{x:Null}" Header="Título"/>
+                <DataGridTextColumn Binding="{Binding Descricao}" ClipboardContentBinding="{x:Null}" Header="Descrição"/>
+                <DataGridTextColumn Binding="{Binding Genero, Mode=TwoWay}" ClipboardContentBinding="{x:Null}" Header="Gênero"/>
+                <DataGridTextColumn Binding="{Binding Duracao, Mode=TwoWay}" ClipboardContentBinding="{x:Null}" Header="Duração"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="button4" Content="Excluir Filme" HorizontalAlignment="Left" Margin="90,289,0,0" VerticalAlignment="Top" Width="75" Command="{Binding ExcluirFilmeCommand}"/>
+        <Button x:Name="button5" Content="recarregar" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="75" Command="{Binding PreecherGridCommand}"/>
     </Grid>
 </Window>

@@ -1,5 +1,4 @@
-﻿using PopCorn.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,24 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace PopCorn.View
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for IncAltFilmeView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class IncAltFilmeView : Window
     {
-        public MainWindow()
+        public IncAltFilmeView()
         {
             InitializeComponent();
-        }
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            this.DataContext = new MainWindowViewModel();
         }
     }
 }

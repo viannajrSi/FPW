@@ -7,9 +7,11 @@ using System.Windows.Input;
 
 namespace PopCorn.Processamento
 {
-    class Command : ICommand
+    public class Command : ICommand
     {
+        #pragma warning disable
         public event EventHandler CanExecuteChanged;
+        #pragma warning enable
 
         private Action<object> execute;
 
