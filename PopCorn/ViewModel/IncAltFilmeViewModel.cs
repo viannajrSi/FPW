@@ -38,7 +38,7 @@ namespace PopCorn.ViewModel
             this.filme.Descricao = this.Descricao;
             this.filme.Genero = this.Genero;
             this.filme.Duracao = this.Duracao;
-            this.filme.Assistido = this.Assitido;
+            this.filme.Assistido = this.Assistido;
             this.View.Close();
         }
 
@@ -55,8 +55,9 @@ namespace PopCorn.ViewModel
         private string nome;
         private string descricao;
         private string genero;
-        private bool assitido;
+        private bool assistido;
         private int duracao;
+        private Categoria.categoria categoria;
 
         public int Id
         {
@@ -122,18 +123,34 @@ namespace PopCorn.ViewModel
             }
         }
 
-        public bool Assitido
+        public Categoria.categoria Categoria
         {
             get
             {
-                return assitido;
+                return categoria;
             }
 
             set
             {
-                if (assitido == value)
+                if (categoria == value)
                     return;
-                this.assitido = value;
+                this.categoria = value;
+                OnPropertyChanged("Categoria");
+            }
+        }
+
+        public bool Assistido
+        {
+            get
+            {
+                return assistido;
+            }
+
+            set
+            {
+                if (assistido == value)
+                    return;
+                this.assistido = value;
                 OnPropertyChanged("Assistido");
             }
         }

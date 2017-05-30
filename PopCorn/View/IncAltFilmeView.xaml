@@ -14,8 +14,8 @@
         <Label x:Name="label2" Content="Gênero" HorizontalAlignment="Left" Margin="12,149,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" Margin="12,180,0,0" TextWrapping="Wrap" Text="{Binding Genero, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="label3" Content="Categoria" HorizontalAlignment="Left" Margin="207,149,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="164,180,0,0" VerticalAlignment="Top" Width="120"/>
-        <CheckBox x:Name="checkBox" Content="Assistido ?" HorizontalAlignment="Left" Margin="12,218,0,0" VerticalAlignment="Top" IsChecked="{Binding Assistido, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <ComboBox x:Name="load" HorizontalAlignment="Left" Margin="164,180,0,0" VerticalAlignment="Top" Width="120" SelectedItem="{Binding Categoria, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Loaded="load_Loaded"/>
+        <CheckBox x:Name="checkBox" Content="Assistido ?" HorizontalAlignment="Left" Margin="12,218,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label4" Content="Duração" HorizontalAlignment="Left" Margin="14,241,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="23" Margin="14,272,0,0" TextWrapping="Wrap" Text="{Binding Duracao, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="button" Content="Salvar" HorizontalAlignment="Left" Margin="14,301,0,0" VerticalAlignment="Top" Width="75" Command="{Binding StoreCommand}"/>

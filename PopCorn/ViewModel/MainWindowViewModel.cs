@@ -22,6 +22,7 @@ namespace PopCorn.ViewModel
         public ICommand BuscarFilmeCommand { get; set; }
         public ICommand PreecherGridCommand { get; set; }
         private ObservableCollection<Filme> filmes;
+        private Categoria categoria;
         private Filme filmeSelecionado;
         private int campoBuscaFilme;
 
@@ -149,6 +150,18 @@ namespace PopCorn.ViewModel
             }
         }
 
-       
+        public Categoria.categoria Categoria
+        {
+            get
+            {
+                return Categoria;
+            }
+
+            set
+            {
+                Categoria = value;
+                OnPropertyChanged("Categoria");
+            }
+        }
     }
 }
