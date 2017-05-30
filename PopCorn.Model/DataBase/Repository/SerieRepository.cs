@@ -21,13 +21,13 @@ namespace PopCorn.Model.DataBase.Repository
                 {
                     this.MySqlConnection.Open();
                 }
-                var sql = "INSERT INTO filme (nome,descricao,genero,categoria,qtdEpisodios) VALUES (@nome,@descricao,@genero,@categoria,@qtdEpisodios);";
+                var sql = "INSERT INTO filme (nome,descricao,genero,categoria,qtdEpisodios,assistido) VALUES (@nome,@descricao,@genero,@categoria,@qtdEpisodios,@assistido);";
                 var cmd = new MySqlCommand(sql, this.MySqlConnection);
                 cmd.Parameters.AddWithValue("@nome", serie.Nome);
                 cmd.Parameters.AddWithValue("@descricao", serie.Descricao);
-                cmd.Parameters.AddWithValue("@genero", serie.Genero);
-                //falta categoria
+                cmd.Parameters.AddWithValue("@genero", serie.Genero);               
                 cmd.Parameters.AddWithValue("@qtdEpisodios", serie.quantidadeEpisodio);
+                cmd.Parameters.AddWithValue("@assistido", serie.Assistido);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)

@@ -134,7 +134,7 @@ namespace PopCorn.ViewModel
                 if (assitido == value)
                     return;
                 this.assitido = value;
-                OnPropertyChanged("Assitido");
+                OnPropertyChanged("Assistido");
             }
         }
 

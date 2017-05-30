@@ -148,5 +148,7 @@ namespace PopCorn.ViewModel
                 OnPropertyChanged("CampoBuscaFilme");
             }
         }
+
+       
     }
 }
