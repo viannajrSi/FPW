@@ -8,19 +8,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using static PopCorn.Model.DataBase.Model.Categoria;
 
 namespace PopCorn.ViewModel
 {
-    public class IncAltFilmeViewModel : NotifyPropertyBase
+    public class IncAltSerieViewModel : NotifyPropertyBase
     {
-        public IncAltFilmeView View { get; set; }
-        public ICommand StoreCommand { get; set;}
-        public ICommand CancelCommand { get; set;}
-        private Filme filme;
+        public IncAltSerieView View { get; set; }
+        public ICommand StoreCommand { get; set; }
+        public ICommand CancelCommand { get; set; }
         private ObservableCollection<String> LstAssistidos;
+        private Serie serie;
 
-        public IncAltFilmeViewModel()
-        {
+        public IncAltSerieViewModel() {
             this.StoreCommand = new Command(this.Store);
             this.CancelCommand = new Command(this.Cancel);
             this.LstAssistidos1 = new ObservableCollection<string>();
@@ -28,41 +28,41 @@ namespace PopCorn.ViewModel
             LstAssistidos1.Add("Não");
         }
 
-        public Filme Execute()
+        public Serie Execute()
         {
-            this.filme = new Filme();
+            this.serie = new Serie();
             this.View.ShowDialog();
-            return this.filme;
+            return this.serie;
+
+        }
+
+        public void Cancel(object o)
+        {
+            this.serie = null;
+            this.View.Close();
         }
 
         public void Store(object o)
         {
             //faltam alguns atributos
-            this.filme.Id = this.Id;
-            this.filme.Nome = this.Nome;
-            this.filme.Descricao = this.Descricao;
-            this.filme.Genero = this.Genero;
-            this.filme.Duracao = this.Duracao;
-            this.filme.Assistido = this.Assistido;
+            this.serie.Id = this.Id;
+            this.serie.Nome = this.Nome;
+            this.serie.Descricao = this.Descricao;
+            this.serie.Genero = this.Genero;
+            this.serie.Assistido = this.Assistido;
+            this.serie.QuantidadeEpisodio = this.QuantidadeEpisodio;
+            this.serie.DuracaoEpisodio = this.DuracaoEpisodio;
             this.View.Close();
         }
 
-        public void Cancel(object o) {
-            this.filme = null;
-            this.View.Close();
-        }
-
-
-
-        //Variaveis binding e GET E SET
 
         private int id;
         private string nome;
         private string descricao;
         private string genero;
         private string assistido;
-        private int duracao;
-        private Categoria.categoria categoria;
+        private int quantidadeEpisodio;
+        private int duracaoEpisodio;
 
         public int Id
         {
@@ -128,22 +128,6 @@ namespace PopCorn.ViewModel
             }
         }
 
-        public Categoria.categoria Categoria
-        {
-            get
-            {
-                return categoria;
-            }
-
-            set
-            {
-                if (categoria == value)
-                    return;
-                this.categoria = value;
-                OnPropertyChanged("Categoria");
-            }
-        }
-
         public string Assistido
         {
             get
@@ -160,22 +144,6 @@ namespace PopCorn.ViewModel
             }
         }
 
-        public int Duracao
-        {
-            get
-            {
-                return duracao;
-            }
-
-            set
-            {
-                if (duracao == value)
-                    return;
-                this.duracao = value;
-                OnPropertyChanged("Duracao");
-            }
-        }
-
         public ObservableCollection<string> LstAssistidos1
         {
             get
@@ -186,7 +154,36 @@ namespace PopCorn.ViewModel
             set
             {
                 LstAssistidos = value;
-                OnPropertyChanged("LstAssistidos1");
+            }
+        }
+
+       
+
+        public int DuracaoEpisodio
+        {
+            get
+            {
+                return duracaoEpisodio;
+            }
+
+            set
+            {
+                duracaoEpisodio = value;
+                OnPropertyChanged("DuracaoEpisodio");
+            }
+        }
+
+        public int QuantidadeEpisodio
+        {
+            get
+            {
+                return quantidadeEpisodio;
+            }
+
+            set
+            {
+                quantidadeEpisodio = value;
+                OnPropertyChanged("QuantidadeEpisodio");
             }
         }
     }

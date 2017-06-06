@@ -30,5 +30,15 @@ namespace PopCorn.View
         {
             this.DataContext = new MainWindowViewModel();
         }
+
+        private void dataGrid1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void ola(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

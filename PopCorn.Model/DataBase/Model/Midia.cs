@@ -13,6 +13,6 @@ namespace PopCorn.Model.DataBase.Model
         public string Descricao { get; set;}
         public string Genero { get; set;}
         public Categoria.categoria Categoria { get; set;}
-        public bool Assistido { get; set; }
+        public string Assistido { get; set; }
     }
 }

@@ -28,7 +28,7 @@ namespace PopCorn.Model.DataBase
         {
             try
             {
-                var stringConexao = "Persist Security Info=False;server=localhost;database=pop_corn;uid=root;pwd=aluno";
+                var stringConexao = "Persist Security Info=False;server=localhost;database=pop_corn;uid=root;pwd=";
                 this._connection = new MySqlConnection(stringConexao);
                 this._connection.Open();
             }

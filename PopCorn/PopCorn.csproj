@@ -59,6 +59,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\IncAltSerieView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -70,9 +74,13 @@
     <Compile Include="Processamento\Command.cs" />
     <Compile Include="Processamento\NotifyPropertyBase.cs" />
     <Compile Include="ViewModel\IncAltFilmeViewModel.cs" />
+    <Compile Include="ViewModel\IncAltSerieViewModel.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="View\IncAltFilmeView.xaml.cs">
       <DependentUpon>IncAltFilmeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\IncAltSerieView.xaml.cs">
+      <DependentUpon>IncAltSerieView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

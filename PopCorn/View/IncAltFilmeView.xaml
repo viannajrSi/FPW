@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PopCorn.View"
         mc:Ignorable="d"
-        Title="IncAltFilmeView" Height="362.185" Width="321.008">
+        Title="IncAltFilmeView" Height="396.679" Width="321.008">
     <Grid>
         <Label x:Name="label" Content="Título" HorizontalAlignment="Left" Margin="12,5,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.582,2.032"/>
         <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="12,36,0,0" TextWrapping="Wrap" Text="{Binding Nome}" VerticalAlignment="Top" Width="272"/>
@@ -15,11 +15,12 @@
         <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" Margin="12,180,0,0" TextWrapping="Wrap" Text="{Binding Genero, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="label3" Content="Categoria" HorizontalAlignment="Left" Margin="207,149,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="load" HorizontalAlignment="Left" Margin="164,180,0,0" VerticalAlignment="Top" Width="120" SelectedItem="{Binding Categoria, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Loaded="load_Loaded"/>
-        <CheckBox x:Name="checkBox" Content="Assistido ?" HorizontalAlignment="Left" Margin="12,218,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label4" Content="Duração" HorizontalAlignment="Left" Margin="14,241,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="23" Margin="14,272,0,0" TextWrapping="Wrap" Text="{Binding Duracao, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="button" Content="Salvar" HorizontalAlignment="Left" Margin="14,301,0,0" VerticalAlignment="Top" Width="75" Command="{Binding StoreCommand}"/>
-        <Button x:Name="button1" Content="Cancelar" HorizontalAlignment="Left" Margin="228,301,0,0" VerticalAlignment="Top" Width="75" Command="{Binding CancelCommand}"/>
+        <Label x:Name="label4" Content="Duração" HorizontalAlignment="Left" Margin="14,266,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="23" Margin="14,297,0,0" TextWrapping="Wrap" Text="{Binding Duracao, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="button" Content="Salvar" HorizontalAlignment="Left" Margin="12,336,0,0" VerticalAlignment="Top" Width="75" Command="{Binding StoreCommand}"/>
+        <Button x:Name="button1" Content="Cancelar" HorizontalAlignment="Left" Margin="228,336,0,0" VerticalAlignment="Top" Width="75" Command="{Binding CancelCommand}"/>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="12,239,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding LstAssistidos1}" SelectedIndex="1" SelectedItem="{Binding Assistido, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <Label x:Name="label5" Content="Assistido:" HorizontalAlignment="Left" Margin="14,208,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

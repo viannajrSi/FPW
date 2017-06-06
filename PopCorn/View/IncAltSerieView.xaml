@@ -1,0 +1,28 @@
+﻿<Window x:Class="PopCorn.View.IncAltSerieView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PopCorn.View"
+        mc:Ignorable="d"
+        Title="IncAltSerieView" Height="469.333" Width="325.333">
+    <Grid>
+        <Label x:Name="label" Content="Título" HorizontalAlignment="Left" Margin="12,5,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.582,2.032"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="12,36,0,0" TextWrapping="Wrap" Text="{Binding Nome, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="272"/>
+        <Label x:Name="label1" Content="Descrição" HorizontalAlignment="Left" Margin="12,64,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="49" Margin="12,95,0,0" TextWrapping="Wrap" Text="{Binding Descricao, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="270"/>
+        <Label x:Name="label2" Content="Gênero" HorizontalAlignment="Left" Margin="12,149,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" Margin="12,180,0,0" TextWrapping="Wrap" Text="{Binding Genero, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="label3" Content="Categoria" HorizontalAlignment="Left" Margin="207,149,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label4" Content="Quantidade de episódios" HorizontalAlignment="Left" Margin="14,266,0,-23" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="23" Margin="14,297,0,-51" TextWrapping="Wrap" Text="{Binding QuantidadeEpisodio, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="button" Content="Salvar" HorizontalAlignment="Left" Margin="10,408,0,0" VerticalAlignment="Top" Width="75" Command="{Binding StoreCommand}"/>
+        <Button x:Name="button1" Content="Cancelar" HorizontalAlignment="Left" Margin="232,408,0,0" VerticalAlignment="Top" Width="75" Command="{Binding CancelCommand}"/>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="12,239,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding LstAssistidos1}" SelectedIndex="1" SelectedItem="{Binding Assistido, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <Label x:Name="label5" Content="Assistido:" HorizontalAlignment="Left" Margin="14,208,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label4_Copy" Content="Duração por episódio" HorizontalAlignment="Left" Margin="12,335,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox4" HorizontalAlignment="Left" Height="23" Margin="14,366,0,0" TextWrapping="Wrap" Text="{Binding DuracaoEpisodio, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="load" HorizontalAlignment="Left" Margin="176,180,0,0" VerticalAlignment="Top" Width="120" SelectedItem="{Binding Categoria, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Loaded="load_Loaded"/>
+
+    </Grid>
+</Window>
