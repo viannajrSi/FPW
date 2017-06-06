@@ -27,13 +27,13 @@ namespace PopCorn.View
 
         private void load_Loaded(object sender, RoutedEventArgs e)
         {
-            List<Categoria.categoria> data = new List<Categoria.categoria>();
+            List<categoria> data = new List<categoria>();
 
-            var array = Enum.GetValues(typeof(Categoria.categoria));
+            var array = Enum.GetValues(typeof(categoria));
 
             for (int i = 1; i <= array.Length; i++)
             {
-                data.Add((Categoria.categoria)i);
+                data.Add((categoria)i);
             }
 
             var combo = sender as ComboBox;

@@ -1,0 +1,17 @@
+﻿<Window x:Class="PopCorn.View.AddPrecoView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PopCorn.View"
+        mc:Ignorable="d"
+        Title="AddPrecoView" Height="200" Width="300">
+    <Grid Loaded="Grid_Loaded">
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="10,46,0,0" VerticalAlignment="Top" Width="272"/>
+        <Label x:Name="label" Content="Categoria" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1" Content="Preço" HorizontalAlignment="Left" Margin="10,73,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="10,104,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="272"/>
+        <Button x:Name="button" Content="Cadastrar" HorizontalAlignment="Left" Margin="96,139,0,0" VerticalAlignment="Top" Width="75"/>
+
+    </Grid>
+</Window>

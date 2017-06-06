@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using static PopCorn.Model.DataBase.Model.Categoria;
+using static PopCorn.Model.DataBase.Model.categoria;
 
 namespace PopCorn.ViewModel
 {
@@ -52,6 +52,7 @@ namespace PopCorn.ViewModel
             this.serie.Assistido = this.Assistido;
             this.serie.QuantidadeEpisodio = this.QuantidadeEpisodio;
             this.serie.DuracaoEpisodio = this.DuracaoEpisodio;
+            this.serie.Categoria = this.Categoria;     
             this.View.Close();
         }
 
@@ -63,6 +64,7 @@ namespace PopCorn.ViewModel
         private string assistido;
         private int quantidadeEpisodio;
         private int duracaoEpisodio;
+        private categoria categoria;
 
         public int Id
         {
@@ -184,6 +186,22 @@ namespace PopCorn.ViewModel
             {
                 quantidadeEpisodio = value;
                 OnPropertyChanged("QuantidadeEpisodio");
+            }
+        }
+
+        public categoria Categoria
+        {
+            get
+            {
+                return categoria;
+            }
+
+            set
+            {
+                if (categoria == value)
+                    return;
+                this.categoria = value;
+                OnPropertyChanged("Categoria");
             }
         }
     }

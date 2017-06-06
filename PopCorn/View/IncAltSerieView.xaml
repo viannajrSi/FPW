@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PopCorn.View"
         mc:Ignorable="d"
         Title="IncAltSerieView" Height="469.333" Width="325.333">
-    <Grid>
+    <Grid Loaded="Grid_Loaded">
         <Label x:Name="label" Content="Título" HorizontalAlignment="Left" Margin="12,5,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.582,2.032"/>
         <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="12,36,0,0" TextWrapping="Wrap" Text="{Binding Nome, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="272"/>
         <Label x:Name="label1" Content="Descrição" HorizontalAlignment="Left" Margin="12,64,0,0" VerticalAlignment="Top"/>

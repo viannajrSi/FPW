@@ -16,13 +16,18 @@ using System.Windows.Shapes;
 namespace PopCorn.View
 {
     /// <summary>
-    /// Interaction logic for IncAltSerieView.xaml
+    /// Interaction logic for AddPrecoView.xaml
     /// </summary>
-    public partial class IncAltSerieView : Window
+    public partial class AddPrecoView : Window
     {
-        public IncAltSerieView()
+        public AddPrecoView()
         {
             InitializeComponent();
+        }
+
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+            
         }
 
         private void load_Loaded(object sender, RoutedEventArgs e)
@@ -39,11 +44,6 @@ namespace PopCorn.View
             var combo = sender as ComboBox;
             combo.ItemsSource = data;
             combo.SelectedIndex = 0;
-        }
-
-        private void Grid_Loaded(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

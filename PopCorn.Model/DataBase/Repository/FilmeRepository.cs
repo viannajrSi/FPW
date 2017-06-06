@@ -23,12 +23,12 @@ namespace PopCorn.Model.DataBase.Repository
                 {
                     this.MySqlConnection.Open();
                 }
-                var sql = "INSERT INTO filme (nome,descricao,genero,duracao,assistido) VALUES (@nome,@descricao,@genero,@duracao,@assistido);";
+                var sql = "INSERT INTO filme (nome,descricao,genero,duracao,assistido,categoria) VALUES (@nome,@descricao,@genero,@duracao,@assistido,@categoria);";
                 var cmd = new MySqlCommand(sql, this.MySqlConnection);
                 cmd.Parameters.AddWithValue("@nome", filme.Nome);
                 cmd.Parameters.AddWithValue("@descricao", filme.Descricao);
                 cmd.Parameters.AddWithValue("@genero", filme.Genero);
-                //falta categoria
+                cmd.Parameters.AddWithValue("@categoria", filme.Categoria);
                 cmd.Parameters.AddWithValue("@duracao", filme.Duracao);
                 cmd.Parameters.AddWithValue("@assistido", filme.Assistido);
                 cmd.ExecuteNonQuery();
@@ -40,7 +40,7 @@ namespace PopCorn.Model.DataBase.Repository
             }
             finally
             {
-                //teste
+                
                 this.MySqlConnection.Close();
             }
         }
@@ -67,6 +67,7 @@ namespace PopCorn.Model.DataBase.Repository
                         Nome = linha["nome"].ToString(),
                         Descricao = linha["descricao"].ToString(),
                         Genero = linha["genero"].ToString(),
+                        Categoria = CategoriaEnumUtils.BuscarCategoriaPeloId(linha["categoria"].ToString()),
                         Duracao = Convert.ToInt32(linha["duracao"])
                     };
                     filmes.Add(filme);

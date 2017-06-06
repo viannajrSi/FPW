@@ -27,10 +27,11 @@ namespace PopCorn.ViewModel
         public ICommand PreecherGridSerieCommand { get; set; }
         public ICommand BuscarSeriesNaoAssistadasCommand { get; set;}
         public ICommand CalcularTempoSerieCommand { get; set;}
+        public ICommand NovoCadastoPrecoCommand { get; set;}
         private ObservableCollection<Filme> filmes;
         private ObservableCollection<Serie> series;
 
-        private Categoria categoria;
+        private categoria categoria;
         private Filme filmeSelecionado;
         private Serie serieSelecionado;
         private int campoBuscaFilme;
@@ -121,6 +122,17 @@ namespace PopCorn.ViewModel
         public void Shutdown(object o)
         {
             System.Environment.Exit(0);
+        }
+
+
+        public void InserirPreco(object o)
+        {
+            var view = new AddPrecoView();
+            var viewModel = new PrecoViewModel();
+
+            view.DataContext = viewModel;
+            viewModel.View = view;
+            var filme = viewModel.Execute();
         }
 
         public void InserirFilme(object o)
@@ -276,7 +288,7 @@ namespace PopCorn.ViewModel
             }
         }
 
-        public Categoria.categoria Categoria
+        public categoria Categoria
         {
             get
             {

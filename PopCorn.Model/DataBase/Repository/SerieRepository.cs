@@ -68,7 +68,8 @@ namespace PopCorn.Model.DataBase.Repository
                         Genero = linha["genero"].ToString(),
                         Assistido = linha["assistido"].ToString(),
                         QuantidadeEpisodio = Convert.ToInt32(linha["qtdEpisodios"]),
-                        DuracaoEpisodio = Convert.ToInt32(linha["duracaoEpisodio"])
+                        DuracaoEpisodio = Convert.ToInt32(linha["duracaoEpisodio"]),
+                        Categoria = CategoriaEnumUtils.BuscarCategoriaPeloId(linha["categoria"].ToString())
                     };
                     series.Add(serie);
                 }

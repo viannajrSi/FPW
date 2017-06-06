@@ -44,6 +44,7 @@ namespace PopCorn.ViewModel
             this.filme.Genero = this.Genero;
             this.filme.Duracao = this.Duracao;
             this.filme.Assistido = this.Assistido;
+            this.filme.Categoria = this.Categoria;
             this.View.Close();
         }
 
@@ -62,7 +63,7 @@ namespace PopCorn.ViewModel
         private string genero;
         private string assistido;
         private int duracao;
-        private Categoria.categoria categoria;
+        private categoria categoria;
 
         public int Id
         {
@@ -128,7 +129,7 @@ namespace PopCorn.ViewModel
             }
         }
 
-        public Categoria.categoria Categoria
+        public categoria Categoria
         {
             get
             {

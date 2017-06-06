@@ -18,29 +18,30 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="61*"/>
                         <ColumnDefinition Width="6*"/>
-                        <ColumnDefinition Width="603*"/>
+                        <ColumnDefinition Width="13*"/>
+                        <ColumnDefinition Width="590*"/>
                     </Grid.ColumnDefinitions>
-                    <Button x:Name="button1" Content="Nova Série" HorizontalAlignment="Left" Margin="10,256,0,0" VerticalAlignment="Top" Width="75" Grid.ColumnSpan="3" Command="{Binding NovoSerieCommand}" Height="20"/>
-                    <Button x:Name="button6" Content="Excluir Série" HorizontalAlignment="Left" Margin="37,256,0,0" VerticalAlignment="Top" Width="75" Grid.Column="2" Command="{Binding ExcluirSerieCommand}" Height="20"/>
-                    <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="20" Margin="10,23,0,0" TextWrapping="Wrap" Text="{Binding CampoBuscaSerie}" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="3"/>
-                    <Button x:Name="button3_Copy" Content="Buscar" HorizontalAlignment="Left" Margin="68,23,0,0" VerticalAlignment="Top" Width="75" Command="{Binding BuscarSerieCommand}" Grid.Column="2" Height="20" />
+                    <Button x:Name="button1" Content="Nova Série" HorizontalAlignment="Left" Margin="10,256,0,0" VerticalAlignment="Top" Width="75" Grid.ColumnSpan="4" Command="{Binding NovoSerieCommand}" Height="20"/>
+                    <Button x:Name="button6" Content="Excluir Série" HorizontalAlignment="Left" Margin="24,256,0,0" VerticalAlignment="Top" Width="75" Grid.Column="3" Command="{Binding ExcluirSerieCommand}" Height="20"/>
+                    <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="20" Margin="10,23,0,0" TextWrapping="Wrap" Text="{Binding CampoBuscaSerie}" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="4"/>
+                    <Button x:Name="button3_Copy" Content="Buscar" HorizontalAlignment="Left" Margin="55,23,0,0" VerticalAlignment="Top" Width="75" Command="{Binding BuscarSerieCommand}" Grid.Column="3" Height="20" />
                     <Label x:Name="label_Copy" Content="Código" HorizontalAlignment="Left" Margin="10,-3,0,0" VerticalAlignment="Top" Height="26" Width="49"/>
-                    <Button x:Name="button2_Copy" Content="Sair" HorizontalAlignment="Left" Margin="990,256,-462,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.261,0.72" Command="{Binding CloseCommand}" Grid.Column="2" Height="20"/>
-                    <DataGrid x:Name="dataGrid1" HorizontalAlignment="Left" Margin="12,48,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3" Height="198" Width="634" SelectedItem="{Binding SerieSelecionado, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding Series, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" AutoGenerateColumns="False" SelectionChanged="ola">
+                    <Button x:Name="button2_Copy" Content="Sair" HorizontalAlignment="Left" Margin="977,256,-462,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.261,0.72" Command="{Binding CloseCommand}" Grid.Column="3" Height="20"/>
+                    <DataGrid HorizontalAlignment="Left" Margin="12,48,0,0" VerticalAlignment="Top" Grid.ColumnSpan="4" Height="198" Width="634" SelectedItem="{Binding SerieSelecionado, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding Series, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" AutoGenerateColumns="False" SelectionChanged="ola">
                         <DataGrid.Columns>
                             <DataGridTextColumn Binding="{Binding Id}" ClipboardContentBinding="{x:Null}" Header="Código"/>
                             <DataGridTextColumn Binding="{Binding Nome}" ClipboardContentBinding="{x:Null}" Header="Título"/>
                             <DataGridTextColumn Binding="{Binding Descricao}" ClipboardContentBinding="{x:Null}" Header="Descrição"/>
-                            <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Categoria"/>
+                            <DataGridTextColumn Binding="{Binding Categoria}" ClipboardContentBinding="{x:Null}" Header="Categoria"/>
                             <DataGridTextColumn Binding="{Binding QuantidadeEpisodio}" ClipboardContentBinding="{x:Null}" Header="Quantidade de episódios"/>
                             <DataGridTextColumn Binding="{Binding DuracaoEpisodio}" ClipboardContentBinding="{x:Null}" Header="Duração por epísodio"/>
                             <DataGridTextColumn Binding="{Binding Assistido}" ClipboardContentBinding="{x:Null}" Header="Assistido"/>
                         </DataGrid.Columns>
                     </DataGrid>
-                    <Button x:Name="button7" Content="Séries não assistidas" Grid.Column="2" HorizontalAlignment="Left" Margin="127,256,0,0" VerticalAlignment="Top" Width="121" Command="{Binding BuscarSeriesNaoAssistadasCommand}" Height="20"/>
-                    <Button x:Name="button8" Content="recarregar" Grid.Column="2" HorizontalAlignment="Left" Margin="504,23,0,0" VerticalAlignment="Top" Width="75" Command="{Binding PreecherGridSerieCommand}"/>
-                    <Button x:Name="button9" Content="Calcular tempo total" Grid.Column="2" HorizontalAlignment="Left" Margin="159,23,0,0" VerticalAlignment="Top" Width="122" Command="{Binding CalcularTempoSerieCommand}"/>
-                    <TextBox x:Name="textBox1" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="286,20,0,0" TextWrapping="Wrap" Text="{Binding TempoSerie, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
+                    <Button x:Name="button7" Content="Séries não assistidas" Grid.Column="3" HorizontalAlignment="Left" Margin="114,256,0,0" VerticalAlignment="Top" Width="121" Command="{Binding BuscarSeriesNaoAssistadasCommand}" Height="20"/>
+                    <Button x:Name="button8" Content="recarregar" Grid.Column="3" HorizontalAlignment="Left" Margin="491,23,0,0" VerticalAlignment="Top" Width="75" Command="{Binding PreecherGridSerieCommand}"/>
+                    <Button x:Name="button9" Content="Calcular tempo total" Grid.Column="3" HorizontalAlignment="Left" Margin="146,23,0,0" VerticalAlignment="Top" Width="122" Command="{Binding CalcularTempoSerieCommand}"/>
+                    <TextBox x:Name="textBox1" Grid.Column="3" HorizontalAlignment="Left" Height="23" Margin="273,20,0,0" TextWrapping="Wrap" Text="{Binding TempoSerie, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Filmes">
@@ -57,6 +58,7 @@
                             <DataGridTextColumn Binding="{Binding Descricao}" ClipboardContentBinding="{x:Null}" Header="Descrição"/>
                             <DataGridTextColumn Binding="{Binding Genero, Mode=TwoWay}" ClipboardContentBinding="{x:Null}" Header="Gênero"/>
                             <DataGridTextColumn Binding="{Binding Duracao, Mode=TwoWay}" ClipboardContentBinding="{x:Null}" Header="Duração"/>
+                            <DataGridTextColumn Binding="{Binding Categoria, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ClipboardContentBinding="{x:Null}" Header="Categoria"/>
                         </DataGrid.Columns>
                     </DataGrid>
                     <Button x:Name="button_Copy" Content="Novo Filme" HorizontalAlignment="Left" Margin="10,251,0,0" VerticalAlignment="Top" Width="75" Command="{Binding NovoFilmeCommand}" Grid.ColumnSpan="3"/>
@@ -70,5 +72,6 @@
             </TabItem>
         </TabControl>
         <Button x:Name="button2" Content="Sair" HorizontalAlignment="Left" Margin="585,318,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.261,0.72" Command="{Binding CloseCommand}" Grid.Column="1"/>
+        <Button x:Name="button10" Grid.ColumnSpan="2" Content="Cadastrar preço" HorizontalAlignment="Left" Margin="10,323,0,0" VerticalAlignment="Top" Width="91" RenderTransformOrigin="0.16,1.1"/>
     </Grid>
 </Window>

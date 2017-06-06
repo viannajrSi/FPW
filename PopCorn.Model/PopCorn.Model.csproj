@@ -48,6 +48,7 @@
     <Compile Include="DataBase\Model\Categoria.cs" />
     <Compile Include="DataBase\Model\Filme.cs" />
     <Compile Include="DataBase\Model\Midia.cs" />
+    <Compile Include="DataBase\Model\Preco.cs" />
     <Compile Include="DataBase\Model\Serie.cs" />
     <Compile Include="DBFactory.cs" />
     <Compile Include="DataBase\Repository\FilmeRepository.cs" />
